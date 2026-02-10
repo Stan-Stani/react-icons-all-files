@@ -3,6 +3,7 @@ const runtimeCaching = require("next-pwa/cache");
 const path = require("path");
 
 const prod = process.env.NODE_ENV === "production";
+const basePath = process.env.BASE_PATH || "";
 
 module.exports = withPWA({
   pwa: {
@@ -12,6 +13,7 @@ module.exports = withPWA({
     scope: "/",
     runtimeCaching,
   },
+  basePath,
   experimental: {
     publicDirectory: true,
   },
@@ -22,15 +24,15 @@ module.exports = withPWA({
     }
     config.resolve.alias["@components"] = path.join(
       __dirname,
-      `src/components`
+      `src/components`,
     );
     config.resolve.alias["@pages"] = path.join(__dirname, `src/pages`);
     config.resolve.alias["@styles"] = path.join(__dirname, `src/styles`);
     config.resolve.alias["@utils"] = path.join(__dirname, `src/utils`);
     return config;
   },
-  assetPrefix: process.env.BASE_PATH || "",
+  assetPrefix: basePath,
   publicRuntimeConfig: {
-    basePath: process.env.BASE_PATH || "",
+    basePath,
   },
 });

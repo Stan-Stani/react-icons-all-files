@@ -1,13 +1,16 @@
 import CodeBlock from "@components/@core/code-block";
 import Container from "@components/@core/container";
-import Badges from "@components/pages/home/badges";
 import { BRAND_TITLE, HOME_USAGE, HOME_USAGE_ALL } from "@utils/constants";
-import React from "react";
 
 export default function HomePage() {
   return (
     <Container title={BRAND_TITLE}>
-      <Badges />
+      <p>
+        This site documents the <strong>React Icons v4.1.0</strong>{" "}
+        <strong>@react-icons/all-files</strong> build (per-file imports), which
+        is useful for projects stuck on older tooling (for example, some Next.js
+        setups).
+      </p>
       <p>
         Include popular icons in your React projects easily with react-icons,
         which utilizes ES6 imports that allows you to include only the icons
@@ -22,12 +25,12 @@ export default function HomePage() {
 
       <h2>Installation (for meteorjs, gatsbyjs, etc)</h2>
       <p>
-        If your project grows in size, this option is available.
-        This method has the trade-off that it takes a long time to install the package.
-        Suitable for MeteorJS, Gatsbyjs etc.
+        If your project grows in size, this option is available. This method has
+        the trade-off that it takes a long time to install the package. Suitable
+        for MeteorJS, Gatsbyjs etc.
       </p>
       <CodeBlock code={`npm install @react-icons/all-files --save`} />
-      
+
       <h3>Usage</h3>
       <CodeBlock code={HOME_USAGE_ALL} />
 

@@ -1,8 +1,9 @@
-export const BRAND_TITLE = "React Icons";
+export const BRAND_TITLE = "React Icons v4.1.0 (all-files)";
 export const BRAND_TITLE_MONO = "react-icons";
 export const BRAND_DESCRIPTION =
-  "Include popular icons in your React projects easly with react-icons.";
-export const BRAND_KEYWORDS = "React, Icons, Tree Shaking, SVG";
+  "React Icons v4.1.0 (all-files) build for projects that need per-file imports (e.g. older bundlers / Next.js setups).";
+export const BRAND_KEYWORDS =
+  "React, Icons, Tree Shaking, SVG, 4.1.0, all-files, @react-icons/all-files";
 
 export const HOME_USAGE = `
 import { FaBeer } from 'react-icons/fa';
