@@ -2,11 +2,15 @@ import toast from "cogo-toast";
 import copy from "copy-to-clipboard";
 import React from "react";
 
-function Icon({ icon, name }) {
+function Icon({ icon, name, iconId }) {
   const copyToClipboard = () => {
-    copy(name);
-    toast.success(`Copied '${name}' to clipboard`, {
-      position: "bottom-center"
+    const importCode = iconId
+      ? `import { ${name} } from "@react-icons/all-files/${iconId}/${name}";`
+      : name;
+
+    copy(importCode);
+    toast.success(`Copied import for '${name}' to clipboard`, {
+      position: "bottom-center",
     });
   };
 

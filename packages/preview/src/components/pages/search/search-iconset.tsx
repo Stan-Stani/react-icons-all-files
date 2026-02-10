@@ -11,23 +11,29 @@ export default function SearchIconSet({ icon, query, setResults }) {
   return (
     <IconSet fallback={<SearchPageIconLoading />}>
       {({ default: icons }) => {
-        const found = Object.keys(icons)
-          .filter(name => name.toLowerCase().includes(query))
+        const found = Object.keys(icons).filter((name) =>
+          name.toLowerCase().includes(query)
+        );
         return (
           <>
-            {found.map(name => (
-                <Icon key={name} icon={icons[name]} name={name} />
-              ))}
-              {setResults(prevResults => {
-                return prevResults.hasOwnProperty(icon.id) ?
-                  prevResults :
-                  {
+            {found.map((name) => (
+              <Icon
+                key={name}
+                icon={icons[name]}
+                name={name}
+                iconId={icon.id}
+              />
+            ))}
+            {setResults((prevResults) => {
+              return prevResults.hasOwnProperty(icon.id)
+                ? prevResults
+                : {
                     ...prevResults,
-                    [icon.id]: found.length
-                  }
-              })}
+                    [icon.id]: found.length,
+                  };
+            })}
           </>
-        )
+        );
       }}
     </IconSet>
   );
